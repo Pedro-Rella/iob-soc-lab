@@ -12,4 +12,4 @@
 	url = git@github.com:Pedro-Rella/iob-timer.git
 [submodule "submodules/KNN"]
 	path = submodules/KNN
-	url = git@github.com:Pedro-Rella/iob-soc-knn.git
+	url = git@github.com:Pedro-Rella/KNN.git
