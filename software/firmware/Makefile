@@ -19,7 +19,7 @@ $(foreach p, $(PERIPHERALS), $(eval include $(SUBMODULES_DIR)/$p/software/embedd
 HDR+=periphs.h
 
 #SOURCES
-SRC+= firmware.S firmware.c
+SRC+= firmware.S
 
 #RULES
 run: firmware.elf
