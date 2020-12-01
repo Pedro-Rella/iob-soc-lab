@@ -10,10 +10,10 @@
 
 
 #FIRMWARE SIZE (LOG2)
-FIRM_ADDR_W ?=14
+FIRM_ADDR_W ?=20
 
 #SRAM SIZE (LOG2)
-SRAM_ADDR_W ?=14
+SRAM_ADDR_W ?=20
 
 #DDR 
 USE_DDR ?=0
@@ -68,21 +68,24 @@ LOCAL_FPGA_LIST=CYCLONEV-GT-DK AES-KU040-DB-G BASYS3
 #boards installed host
 #LOCAL_BOARD_LIST=CYCLONEV-GT-DK
 #LOCAL_BOARD_LIST=AES-KU040-DB-G
+#LOCAL_BOARD_LIST=BASYS3
 
 #set according to FPGA board
 ifeq ($(BOARD),AES-KU040-DB-G)
-	BOARD_SERVER ?=baba-de-camelo.iobundle.com
+#	BOARD_SERVER ?=baba-de-camelo.iobundle.com
+	BOARD_SERVER ?=localhost
 	BOARD_USER ?=$(USER)
 	FPGA_OBJ ?=synth_system.bit
 	FPGA_LOG ?=vivado.log
-	FPGA_SERVER ?=pudim-flan.iobundle.com
+#	FPGA_SERVER ?=pudim-flan.iobundle.com
+	FPGA_SERVER ?=localhost
 	FPGA_USER ?=$(USER)
-else #default; ifeq ($(BOARD),CYCLONEV-GT-DK)
-	BOARD_SERVER ?=pudim-flan.iobundle.com
+else #default; ifeq ($(BOARD),BASYS3)
+	BOARD_SERVER ?=localhost
 	BOARD_USER ?=$(USER)
 	FPGA_OBJ ?=output_files/top_system.sof
 	FPGA_LOG ?=output_files/top_system.fit.summary
-	FPGA_SERVER ?=pudim-flan.iobundle.com
+	FPGA_SERVER ?=localhost
 	FPGA_USER ?=$(USER)
 endif
 

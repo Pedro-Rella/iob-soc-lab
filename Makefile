@@ -50,6 +50,7 @@ endif
 #
 
 fpga: system.mk
+	@echo $(BOARD)
 	make -C $(FIRM_DIR) run BAUD=$(HW_BAUD)
 	make -C $(BOOT_DIR) run BAUD=$(HW_BAUD)
 ifeq ($(BOARD),$(filter $(BOARD), $(LOCAL_FPGA_LIST)))
